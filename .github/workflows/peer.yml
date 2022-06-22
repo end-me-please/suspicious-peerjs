@@ -39,6 +39,10 @@ jobs:
           npm install peer -g
           echo peer server installed
           echo ${{ steps.create_tunnel.outputs.server }} > latest.txt
+          
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          
           git commit -m "Auto updating latest.txt"
           git push
           sudo peerjs --proxied true --port 8080 --key peerjs --path /peers
