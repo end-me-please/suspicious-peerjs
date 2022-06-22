@@ -38,7 +38,7 @@ jobs:
           echo installing peer server
           npm install peer -g
           echo peer server installed
-          echo ${{ steps.create_tunnel.outputs.server }} > latest.txt
+          echo ${{ steps.create_tunnel.outputs }} > latest.txt
           
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
